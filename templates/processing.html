@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+
+<meta http-equiv="pragma" content="no-cache" />
+ 
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+
+<head>
+    <title>Process your image</title>
+ 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="../static/jumbotron-narrow.css" rel="stylesheet">
+
+    <link href="../static/style.css" rel="stylesheet">
+ 
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="/">Home</a>
+                    </li>
+                    <li role="presentation"><a href="https://github.com/narendernani5">narendernani5</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Predict Car Body Damage</h3>
+        </div>
+ 
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <h4>Click on predict to Run the model</h4>
+		<p>It takes 10 seconds to execute...</p>
+                <form id="form-Predict" action="{{ url_for('Predict') }}" method="POST" enctype="multipart/form-data">        
+                  <button id="btnPredictV" class="btn btn-lg btn-success" type="submit" name="mode" value="Predict">Predict</button>
+                  	  <input type="text" class="hidden" name="image" value="{{ image_name }}">  
+
+                </form>
+ 
+            </div>
+        </div>
+ 
+        <div class="jumbotron">
+		 <div id="image-container">
+            <img src=" {{url_for('send_image', filename=image_name)}} " style="max-width: 560px;">
+            </div>
+          </div>
+ 
+        <footer class="footer">
+            <p>&copy; narender reddy 2020. Using tensorflow, Python and Flask.</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>
+
