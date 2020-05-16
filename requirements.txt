@@ -11,5 +11,5 @@ matplotlib>=3.1.0
 pandas>=0.19
 tensorflow>=1.15.0
 pathlib>=1.0.1
-PIL>=6.0.0
+PIL>=1.1.7
 segmentation_models>=1.0.1
