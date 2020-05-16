@@ -1,10 +1,6 @@
 # web-app for API image manipulation
-from __future__ import absolute_import, division, print_function, unicode_literals
 from flask import Flask, request, render_template, send_from_directory
-from flask_caching import Cache
 import tensorflow.contrib.eager as tfe
-import warnings
-warnings.filterwarnings("ignore")
 import os
 import pathlib
 from PIL import Image
@@ -202,13 +198,6 @@ def upload():
 @app.route("/Predict", methods=["POST"])
 def Predict():
 
-    # retrieve parameters from html form
-    if 'Predict' in request.form['mode']:
-        mode = 'Predict'
-    else:
-        return render_template("error.html", message="Mode not supported (vertical - horizontal)"), 400
-    filename = request.form['image']
-
     # open and process image
     target = os.path.join(APP_ROOT, 'static/images')
     destination = "/".join([target, filename])
@@ -224,7 +213,7 @@ def Predict():
         pred = Image.blend(image, mask, alpha=.6)
         final = changeImageSize(img.size[0], img.size[1], pred)
     else:
-        return render_template("error.html", message="Mode not supported (vertical - horizontal)"), 400
+        return render_template("error.html", message="Failed to preprocess the image"), 400
 
     # save and return image
     destination = "/".join([target, 'temp1.png'])

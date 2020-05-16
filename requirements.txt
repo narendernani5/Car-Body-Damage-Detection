@@ -1,4 +1,4 @@
-Flask==1.1.1
+Flask==1.1.2
 gunicorn==19.9.0
 itsdangerous==1.1.0
 Jinja2==2.10.1
@@ -7,7 +7,9 @@ Werkzeug==0.15.5
 numpy>=1.9.2
 scipy>=0.15.1
 scikit-learn>=0.18
-matplotlib>=1.4.3
+matplotlib>=3.1.0
 pandas>=0.19
 tensorflow>=1.15.0
-
+pathlib>=1.0.1
+PIL>=6.0.0
+segmentation_models>=1.0.1
