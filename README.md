@@ -11,5 +11,5 @@ Blog Link: https://medium.com/@narender.buchireddy/car-body-damage-detection-u-n
 ![](images/upload_image.PNG)
 ## 3. Predicted image
 ![](images/predict.PNG)
-## Source:  https://github.com/gxercavins/image-api
+#### Source:  https://github.com/gxercavins/image-api
 Thanks to gxercavins for the web application
