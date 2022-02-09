@@ -23,4 +23,3 @@ Developing a deep learning algorithm that can detect car body external damages(s
 ## 3. Predicted image
 ![](images/predict.PNG)
 #### Source:  https://github.com/gxercavins/image-api
-Thanks to gxercavins for the web application
